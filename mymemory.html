@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="img/mymemory.png">
+    <title>기록</title>
+</head>
+
+<html>
+
+<body>
+    <section class="all">
+        <div class="header-container">
+            <header>
+                <h4>my memory</h4>
+            </header>
+            <div class="page-information">
+                the page for <span style="color: rgb(255, 253, 219);">everything</span> I want to share!
+            </div>
+            <div class="middle">
+                <p>NOT UPDATED YET!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; HONG JI YEON ‣ Pusan Nat'l Univ. CSE</p>
+    </footer>
+
+    <button class="moveTopBtn" onclick="moveToTop()">UP</button>
+</body>
+
+</html>
+<style> 
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+    @font-face {
+        font-family: 'NeoDunggeunmoPro-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .page-information {
+        font-size: 15px;
+        color: black;
+        margin: 0 auto;
+        user-select: none;
+    }
+    header {
+        display: inline-flex;
+        height: 1em;
+        border: solid 1px black;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        margin: 0 auto;
+    }
+    body {
+        background-color: #F6DF8C;
+        font-family: 'NeoDunggeunmoPro-Regular';
+    }
+
+    .middle {
+        border: solid 1px black;
+        & p {
+            color: rgb(123, 0, 255);
+            font-size: 100px;
+            margin-top: 200px;
+        }
+    }
+
+    .all {
+        width: 1300px;
+        margin: 50px auto;
+        border: solid 1px black;
+        padding-bottom: 250px;
+        text-align: center;
+    }
+    footer {
+        border: solid 1px black;
+        color: #f41e65;
+        font-size: 20px;
+        text-align: left;
+        width: 1300px;
+        margin: 0 auto;
+        padding-top: 100px;
+        margin-top: 100px;
+        user-select: none;
+    }
+    .moveTopBtn {
+        font-family: 'NeoDunggeunmoPro-Regular';
+        display: none;
+        position: fixed;
+        right: 5vw;
+        bottom: 7vh;
+        padding: 3px 5px;
+        font-size: 30px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #5fc870;
+        border: solid 3px #29ad3f;
+        box-shadow: 0 10px #289139;  
+        align-items: center;
+        min-width: 50px; height: 50px;
+    }
+    .moveTopBtn:hover {
+        background-color: #90d99c;
+        color:#289139;
+    }
+    .moveTopBtn:active {
+        box-shadow: 0 3px #155720;
+        transform: translateY(3px);
+    }
+</style>
+<script>
+    function moveToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    window.addEventListener("scroll", function() {
+    const moveTopBtn = document.querySelector(".moveTopBtn");
+    if (window.pageYOffset > 100) {
+        moveTopBtn.style.display = "block";
+    } else {
+        moveTopBtn.style.display = "none";
+    }
+    });
+</script>
+
