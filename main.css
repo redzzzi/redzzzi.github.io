@@ -106,14 +106,15 @@ body {
     color: rgb(236, 206, 100);
 }
 
+/*
 .all {
     width: 1300px;
     margin: 50px auto;
     border: solid 1px black;
     padding-bottom: 250px;
-}
+}*/
+
 footer {
-    border: solid 1px black;
     color: #e57a9e;
     font-size: 20px;
     text-align: left;
