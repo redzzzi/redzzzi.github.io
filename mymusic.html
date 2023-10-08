@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="img/mymusic.png">
+    <title>노래</title>
+</head>
+
+<html>
+
+<body>
+    <section class="all">
+        <div class="header-container">
+            <header>
+                <h4>my music</h4>
+            </header>
+            <div class="page-information">
+                the page for <span style="color: rgb(206, 229, 255);">music</span> I want to share!
+            </div>
+            <div class="middle">
+                <p>NOT UPDATED YET!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; HONG JI YEON ‣ Pusan Nat'l Univ. CSE</p>
+    </footer>
+
+    <button class="moveTopBtn" onclick="moveToTop()">UP</button>
+</body>
+
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+    @font-face {
+        font-family: 'NeoDunggeunmoPro-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .page-information {
+        font-size: 100%;
+        color: black;
+        margin: 0 auto;
+        user-select: none;
+    }
+    header {
+        border: solid 1px black;
+        display: inline-flex; /* inline-block 중앙정렬하려면 부모 요소 텍스트 중앙정렬 */
+        height: 1em;
+        justify-content: center;
+        align-items: center;
+        font-size: 400%;
+        margin: 0 auto;
+    }
+    body {
+        background-color: #9ebbfa;
+        font-family: 'NeoDunggeunmoPro-Regular';
+    }
+
+    .middle {
+        /*border: solid 1px black;*/
+        & p {
+            color: #f47c20;
+            font-size: 100px;
+            margin-top: 200px;
+        }
+    }
+
+    .all {
+        width: 1300px;
+        margin: 50px auto;
+        border: solid 1px black;
+        padding-bottom: 250px;
+        text-align: center;
+    }
+    footer {
+        border: solid 1px black;
+        color: #3d6bcd;
+        font-size: 20px;
+        text-align: left;
+        /* padding-top: 100px;
+        margin-top: 100px; */
+        user-select: none;
+        width: 80rem;
+        margin: 0 auto;
+        display: flex;
+    }
+    .moveTopBtn {
+        font-family: 'NeoDunggeunmoPro-Regular';
+        position: fixed;
+        right: 5vw;
+        bottom: 7vh;
+        padding: 3px 5px;
+        font-size: 30px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #6390f2;
+        border: solid 3px #517cd9;
+        box-shadow: 0 10px #3d6bcd;    
+        align-items: center;
+        min-width: 50px; height: 50px;
+    }
+    .moveTopBtn:hover {
+        background-color: #dfe9ff;
+        color:#1a3c87;
+    }
+    .moveTopBtn:active {
+        box-shadow: 0 3px #1a3c87;
+        transform: translateY(3px);
+    }
+
+    @media all and (max-width: 430px) {
+        #here {
+            display: none;
+        }
+        .hidden-message {
+            display: none;
+        } 
+        header {
+            font-size: 300%;
+        }   
+        /* body {
+        } */
+        #main-button {
+            flex-direction: column;
+            margin-top: 3rem;
+        }
+        .music,
+        .study,
+        .memory {
+            font-size: 1.5rem;
+            width: 7rem;
+            margin-bottom: 3rem;
+        }
+    }
+    @media (min-width: 431px) and (max-width: 767px) {
+        #here {
+            font-size: 0.5rem;
+        }
+        .hidden-message {
+            font-size: 0.5rem;
+            margin: 1rem 0;
+        } 
+    /*     header {
+        }
+        
+        body {
+        }
+        #main-button {
+        }
+        .music,
+        .study,
+        .memory {
+        } */
+    }
+    @media all and (min-width: 768px) {
+    /*     #here {
+        }
+        .hidden-message {
+        }
+        
+        header {
+        }
+        
+        body {
+        }
+        #main-button {
+        }
+        .music,
+        .study,
+        .memory {
+        } */
+    }
+    @media all and (max-width: 830px) {
+    }
+    @media all and (min-width: 831px) {
+    }
+    @media all and (min-width: 1200px) {
+    }
+
+</style>
+<script>
+    function moveToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    window.addEventListener("scroll", function() {
+    const moveTopBtn = document.querySelector(".moveTopBtn");
+    if (window.pageYOffset > 100) {
+        moveTopBtn.style.opacity = "1";
+        moveTopBtn.style.transition = "opacity 0.5s ease";
+    } else {
+        moveTopBtn.style.opacity = "0";
+        moveTopBtn.style.transition = "opacity 0.2s ease";
+    }
+    });
+</script>

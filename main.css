@@ -1,0 +1,240 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#here {
+    font-size: 1rem;
+    margin: 0 auto;
+    color: #fbb4cd;
+    display: block;
+    text-align: left;
+    &:hover {
+        cursor: help;
+        user-select: none;
+    }
+    &:hover + .hidden-message {
+        opacity: 0.7;
+    }
+}
+.hidden-message {
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    border: solid 0.1rem black;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    margin: 1rem 2rem;
+    text-align: left;
+    opacity: 0;
+    transition: all ease 0.5s;
+    user-select: none;
+}
+
+header {
+    /* border: solid 1px white; */
+    font-family: 'NeoDunggeunmoPro-Regular';
+/*     font-family: 'VT323', monospace; */
+    font-size: 400%;
+    color: #b02a5f;
+    line-height: 0rem;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    -webkit-text-stroke: 0.3px #e77299;
+    cursor: default;
+    user-select:none; /* 드래그 방지 */
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+body {
+    border: solid 1px red;
+    font-family: 'NeoDunggeunmoPro-Regular';
+    background-color: #f8bbd0;
+    line-height: 2.0; /* 글자 줄 간격 */
+    overflow-x:hidden; /* 오른쪽 여백 삭제 ㅎㅎ */
+}
+#main-button {
+    /* border: solid 1px green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12%;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    user-select: none;
+}
+
+.music,
+.study,
+.memory {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    font-size: 2.5rem;
+    flex-direction: row; /* 수평 정렬 */
+    /* padding: 3rem 3rem; */
+    width: 12rem;
+    position: relative;
+    text-align: center;
+    /* transition: transform 0.3s ease-in-out; 스무스함을 위해 매우 중요!! */
+    transition: transform 0.1s none;
+    border: solid 0.3rem black;
+    box-shadow: 1rem 1rem rgb(205, 64, 113);
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+    &:active {
+        box-shadow: 0.5rem 0.5rem rgb(185, 49, 97);
+        transform: translate(0.5rem, 0.5rem);
+    }
+    &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+.music p,
+.study p,
+.memory p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.music:hover {
+    color: #698ad3;
+}
+.study:hover {
+    color: rgb(68, 154, 114);
+}
+.memory:hover {
+    color: rgb(236, 206, 100);
+}
+
+.all {
+    /* border: solid 1px black; */
+    padding-bottom: 10rem;
+    text-align: center;
+}
+footer {
+    border: solid 1px black;
+    width: 80rem;
+    margin: 0 auto;
+    color: #e57a9e;
+    font-size: 1rem;
+    display: flex;
+    text-align: left;
+    user-select: none;
+}
+
+.moveTopBtn {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    position: fixed;
+    right: 5vw;
+    bottom: 7vh;
+    padding: 0.5rem 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #ef79a2;
+    border: solid 0.2rem #d7668c;
+    box-shadow: 0 0.7rem #af4d6e;    
+    align-items: center;
+    min-width: 3rem; height: 3rem;
+}
+.moveTopBtn:hover {
+    background-color: #ffd3e2;
+    color:rgb(185, 49, 97);
+}
+.moveTopBtn:active {
+    box-shadow: 0 0.3rem rgb(185, 49, 97);
+    transform: translateY(0.6rem);
+}
+
+/*
+미디어 쿼리
+*/
+@media all and (max-width: 430px) {
+    #here {
+        display: none;
+    }
+    .hidden-message {
+        display: none;
+    } 
+    header {
+        font-size: 300%;
+    }   
+    /* body {
+    } */
+    #main-button {
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+    .music,
+    .study,
+    .memory {
+        font-size: 1.5rem;
+        width: 7rem;
+        margin-bottom: 3rem;
+    }
+}
+@media (min-width: 431px) and (max-width: 767px) {
+    #here {
+        font-size: 0.5rem;
+    }
+    .hidden-message {
+        font-size: 0.5rem;
+        margin: 1rem 0;
+    } 
+/*     header {
+    }
+    
+    body {
+    }
+    #main-button {
+    }
+    .music,
+    .study,
+    .memory {
+    } */
+}
+@media all and (min-width: 768px) {
+/*     #here {
+    }
+    .hidden-message {
+    }
+    
+    header {
+    }
+    
+    body {
+    }
+    #main-button {
+    }
+    .music,
+    .study,
+    .memory {
+    } */
+}
+@media all and (max-width: 830px) {
+}
+@media all and (min-width: 831px) {
+}
+@media all and (min-width: 1200px) {
+}
